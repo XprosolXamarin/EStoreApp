@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="EStoreApp.Views.OrderAcceptedPage">
+    <ContentPage.Content>
+        <Grid  >
+            <Grid.RowDefinitions>
+                <RowDefinition Height=" Auto"/>
+                <RowDefinition Height=" *"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <StackLayout Grid.Row="1">
+                <ScrollView>
+                    <StackLayout Padding="20, 30">
+                        <Image Source="Pay.png" Aspect="AspectFit"/>
+                        <Label Text="Order Accepted!" TextColor="Black" FontSize="Medium" FontFamily="ThemeFontBold" Padding="0, 10" HorizontalOptions="CenterAndExpand"/>
+                        <Label TextColor="#2b2b2b" FontSize="Small" FontFamily="ThemeFont" Padding="60, 10" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center">
+                            <Label.FormattedText>
+                                <FormattedString>
+                                    <FormattedString.Spans>
+                                        <Span Text="Your Order No"/>
+                                        <Span Text=" "/>
+                                        <Span Text="{Binding orderNumber, Mode=TwoWay}"/>
+                                        <Span Text=" "/>
+                                        <Span Text="has Placed"/>
+                                    </FormattedString.Spans>
+                                </FormattedString>
+                            </Label.FormattedText>
+                        </Label>
+                        <Button BackgroundColor="{StaticResource Key=NormalColor}" TextColor="White" FontFamily="ThemeFontBold" Text="Continue Shopping" Margin="20" CornerRadius="30" HorizontalOptions="FillAndExpand" VerticalOptions="EndAndExpand" Command="{Binding NavigateBarcodePage}"/>
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
